@@ -1,0 +1,83 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 使用予定の色
+$textcolor: #cfcfcf;
+$linkcolor: #d3ccd6;
+
+// -----------------------------------------
+//                ヘッダー
+// -----------------------------------------
+
+header {
+  height: 100px;
+  width: 100%;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 150px;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+ul {
+  display: flex;
+  li {
+    margin: 0 10px;
+    line-height: 30px;
+    border-bottom: solid 1px $linkcolor;
+  }
+}
+
+// ------------------------------------------
+//               コンテンツ
+// ------------------------------------------
+
+.slider-pro {
+  margin-top: 100px;
+}
+
+.contents {
+  background-color: cadetblue;
+  margin: 20px 0;
+  padding: 40px;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  grid-gap: 30px;
+  min-width: 300px;
+  overflow: hidden;
+  .content_post {
+    height: 300px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+h2 {
+  text-align: center;
+}
+
+.search {
+  width: 250px;
+  margin: 20px auto;
+}
+
+// -------------------------------------------
+//                フッター
+// -------------------------------------------
+
+footer {
+  height: 100px;
+  background-color: chocolate;
+}
