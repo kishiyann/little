@@ -9,12 +9,21 @@
       <li><%= link_to("Category", "#")%></li>
     </ul>
   </div>
-  <div class="usernav">
-    <ul>
-      <li>新規登録</li>
-      <li>ログイン</li>
-    </ul>
-  </div>
+  <% if user_signed_in? %>
+    <div class="usernav">
+      <ul>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to  "投稿する", "#", class: "post" %></li>
+      </ul>
+    </div>
+  <% else %>
+    <div class="usernav">
+      <ul>
+        <li><%= link_to "ログイン", "/users/sign_in", class: 'post' %></li>
+        <li><%= link_to "新規登録", "/users/sign_up", class: 'post' %></li>
+      </ul>
+    </div>
+  <% end %>
 </header>
 
 <main>
@@ -28,9 +37,14 @@
     </div>
     <div class="inner">
       <% @tweets.each do |tweet| %>
-        <div class="content_post" style="background-image: url(<%= tweet.image %>);">
-          <p><%= tweet.title %></p>
-          </span>
+        <div class="content">
+          <div class="content_post" style="background-image: url(<%= tweet.image %>);">
+            <p><%= tweet.title %></p>
+          </div>
+          <div class="content__user">
+            <div class="img"></div>
+            <span>ユーザーネーム</span>
+          </div>
         </div>
       <% end %>
     </div>
