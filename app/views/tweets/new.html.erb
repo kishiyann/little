@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="container">
+    <%= form_with(model: @tweet, local: true) do |f| %>
+      <h3></h3>
+      <%= f.text_field :title, placeholder: "タイトル(15文字以内)[必須]" %>
+      <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: "カテゴリー選択[必須]" }  %>
+      <%= f.label 'サムネイル（スクリーンショットなど）[必須]' %>
+      <div id="img_field" onclick="$('#file').click()">
+        <% if @tweet.image.url.present? %>
+          <%= image_tag(@tweet.image.url) %>
+        <% else %>
+          <i class="fas fa-image"></i>
+          <i class="fas fa-file-upload add"></i>
+        <% end %>
+      </div>
+      <%= f.file_field :image, class: "image", style: "display:none;", id: "file" %>
+      <%= f.text_area :text, placeholder: "コメント" , rows: "10" %>
+      <%= f.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
