@@ -26,13 +26,51 @@ header {
 }
 
 /* ナビゲーション */
-ul {
+.navv {
   display: flex;
   li {
     margin: 0 10px;
     line-height: 30px;
     border-bottom: solid 1px $linkcolor;
   }
+}
+
+/* カテゴリー */
+.dropdwn{
+  max-width: 1200px;
+  display: flex;
+}
+
+li{
+  position: relative;
+  padding: 5px;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdwn>li{
+  width: 120px;
+}
+
+.dropdwn_menu{
+  display: none;
+  position: absolute;
+  margin-left: -5px;
+  margin-top: 5px;
+  padding: 0;
+  background: rgb(255, 255, 255);
+}
+
+.dropdwn_menu li{
+  width: 100%;
+}
+
+.dropdwn_menu li a{
+  display: block;
+}
+
+li a:hover{
+  background: #c2c2c2;
 }
 
 /*==========================
