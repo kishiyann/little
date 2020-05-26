@@ -1,0 +1,42 @@
+<header>
+  <div class="title">
+    <h1><%= link_to("A little happiness", "#")%></h1>
+  </div>
+  <div class="nav">
+    <ul class="navv">
+      <li><%= link_to("Home", "#")%></li>
+      <li><%= link_to("Search", "#")%></li>
+      <ul class="dropdwn">
+        <li>Category
+          <ul class="dropdwn_menu">
+            <li><a href="#">風景</a></li>
+            <li><a href="#">ポートレート</a></li>
+            <li><a href="#">スナップ</a></li>
+            <li><a href="#">ペット・生物</a></li>
+            <li><a href="#">自然</a></li>
+            <li><a href="#">鉄道</a></li>
+            <li><a href="#">車・バイク</a></li>
+            <li><a href="#">水中写真</a></li>
+            <li><a href="#">旅行</a></li>
+            <li><a href="#">その他</a></li>
+          </ul>
+        </li>
+      </ul>
+    </ul>
+  </div>
+  <% if user_signed_in? %>
+    <div class="usernav">
+      <ul class="navv">
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to  "投稿する", new_tweet_path, class: "post" %></li>
+      </ul>
+    </div>
+  <% else %>
+    <div class="usernav">
+      <ul>
+        <li><%= link_to "ログイン", "/users/sign_in", class: 'post' %></li>
+        <li><%= link_to "新規登録", "/users/sign_up", class: 'post' %></li>
+      </ul>
+    </div>
+  <% end %>
+</header>
