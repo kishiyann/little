@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TweetsController < ApplicationController
   before_action :move_to_index, except: %i[index show search]
 
