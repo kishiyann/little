@@ -18,8 +18,10 @@
           </div>
           <% end %>
           <div class="content__user">
-            <div class="img"></div>
-            <span>ユーザーネーム</span>
+            <div class="img">
+              <%= image_tag tweet.user.image_url%>
+            </div>
+            <span><%= tweet.user.nickname%></span>
           </div>
         </div>
       <% end %>
