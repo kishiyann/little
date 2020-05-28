@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :tweets, dependent: :destroy
   has_many :comments, dependent: :destroy
+  mount_uploader :image, ImagesUploader
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
   validates :nickname,           presence: true
