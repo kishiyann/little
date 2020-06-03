@@ -10,4 +10,9 @@ class Tweet < ApplicationRecord
   validates :title, presence: true, length: { maximum: 15 }
   validates :image, presence: true
   validates :category_id, presence: true
+
+  def self.search(search)
+    return Tweet.all unless search
+    Tweet.where('title LIKE(?)', "%#{search}%")
+  end
 end
