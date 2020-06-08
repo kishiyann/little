@@ -27,6 +27,7 @@
   <% if user_signed_in? %>
     <div class="usernav">
       <ul class="navv">
+        <li><%= link_to "マイページ", "/users/#{current_user.id}" %></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         <li><%= link_to  "投稿する", new_tweet_path, class: "post" %></li>
       </ul>
