@@ -12,7 +12,10 @@ class Tweet < ApplicationRecord
   validates :category_id, presence: true
 
   def self.search(search)
-    return Tweet.all unless search
-    Tweet.where('title LIKE(?)', "%#{search}%")
+    if search
+      Tweet.where('title LIKE(?)', "%#{search}%")
+    else
+      Tweet.all
+    end
   end
 end
