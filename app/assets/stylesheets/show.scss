@@ -6,5 +6,16 @@
     .content_post {
       height: 500px;
     }
+    .container {
+      align-items: center;
+      form {
+        margin: 10px auto;
+        textarea {
+          width: 50%;
+          height: 100px;
+          padding: 10px;
+        }
+      }
+    }
   }
 }
